@@ -3,7 +3,7 @@
  * int_index - return index place if comparison = true, else -1
  * @array: array
  * @size: size of elements in array
- * @valu: pointer to func 
+ * @valu: pointer to func of 1 => 3 main
  * Return: 0
  */
 int int_index(int *array, int size, int (*valu)(int))
