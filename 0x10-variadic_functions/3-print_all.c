@@ -31,20 +31,20 @@ void print_all(const char * const format, ...)
 					printf("%s%f", separ, va_arg(list, double));
 					break;
 				case 's':
-					str = va_arg(lst, char *);
+					str = va_arg(list, char *);
 					if (!str)
 						str = "(nil)";
-					printf("%s%s", separ str);
+					printf("%s%s", separ, str);
 					break;
 				default:
 					i++;
 					continue;
 			}
-			separ = ", ";
-			i++;
+		  separ = ", ";
+		  i++;
 		}
 	}
 
-	printf("\n");
-	va_end(list);
+ printf("\n");
+ va_end(list);
 }
