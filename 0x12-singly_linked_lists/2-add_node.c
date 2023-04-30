@@ -7,11 +7,12 @@
  * @head: pointer to the list_t list
  * @str: string to add in the node
  *
- * Return: address or NULL if it fails
+ *  Return: the address of the new element, or NULL if it failed
  */
+
 list_t *add_node(list_t **head, const char *str)
 {
-	list_t *new;
+	list_t *new_strdup;
 	unsigned int len = 0;
 
 	while (str[len])
@@ -19,12 +20,14 @@ list_t *add_node(list_t **head, const char *str)
 
 	new = malloc(sizeof(list_t));
 	if (!new)
-
 		return (NULL);
-         new_strdup = malloc(sizeof(list_t));
-        if (!new_strdup)
-                return (NULL);
 
+        new_strdup = malloc(sizeof(str));
+        if (!new_strdup)
+	{
+	        free(new_strdup);	
+                return (NULL);
+        }
 	new_strdup->str = strdup(str);
 	new_strdup->len = strlen(new);
 	new_strdup->next = *head;
