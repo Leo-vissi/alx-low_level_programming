@@ -5,16 +5,15 @@
  * free_list - frees a list_t linked list
  * @head: pointer to the head of the list
  */
+void free_list(list_t *new_node)
+{
+	list_t *vari;
 
-void free_list(list_t *head)
-     {
-           list_t *vari;
-
-           while (head)
-           {
-                vari = head->next;
-                free(head->str);
-                free(head);
-                head = vari;
-           }
-     }  
+	while (new_node)
+	{
+                vari = new_node->next;
+		free(new_node->str);
+		free(new_node);
+		new_node = vari;
+	}
+}
