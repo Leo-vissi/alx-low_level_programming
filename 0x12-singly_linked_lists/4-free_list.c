@@ -9,7 +9,7 @@
  */
 void free_list(list_t *head)
 {
-        list_t *vari = head;
+        list_t *vari;
 
         while (head != NULL)
         {
