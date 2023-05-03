@@ -1,12 +1,14 @@
 #include <stdio.h>
 
+void first(void) __attribute__ ((constructor));
+
 /**
- * main - prints a message sentence before the main
+ * prem_messages - prints a meassag sentence before the main
  * function is executed
  */
 
-void __attribute__((constructor)) main()
+void prem_messages(void)
 {
-	printf("You're beat! and yet, you must allow,\n"
-		   "I bore my house upon my back!\n");
+	printf("You're beat! and yet, you must allow,\n");
+	printf("I bore my house upon my back!\n");
 }
