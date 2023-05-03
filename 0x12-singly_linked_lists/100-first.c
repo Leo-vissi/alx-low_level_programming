@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void first(void) __attribute__ ((constructor));
+void  prem_messages(void) __attribute__ ((constructor));
 
 /**
  * prem_messages - prints a meassag sentence before the main
