@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * _pow_recursion - Calc returns the value of X to Y
- * @x: Value to multiply. 
- * @y: Time to raise.
+ * _pow_recursion - Calc the value of X to Y
+ * @x: Value to multiply
+ * @y: Time to raise
  *
  * Return: Int
  */
