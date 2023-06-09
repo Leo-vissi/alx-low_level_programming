@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * prime_valu - says is prime number or not
+ * prime_number - says is prime number or not
  * @n: Int
  * @i: Int
  *
@@ -20,7 +20,7 @@ int prime_number(int n, int i)
 }
 
 /**
- * actual_prime - calculates if a number is prime recursively
+ * is_prime_number - calculates if a number is prime recursively
  * @n: Int
  *
  * Return: 1 if n is prime, 0 if not
