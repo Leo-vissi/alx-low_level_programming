@@ -45,7 +45,7 @@ int check_Pal(char *s, int x, int y)
  * is_palindrome - Checks if a string is a palindrome
  * @s: The string
  *
- * Return: Int 
+ * Return: 1 if palindrome, 0 otherwise 
  */
 
 int is_palindrome(char *s)
