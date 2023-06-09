@@ -2,8 +2,8 @@
 
 /**
  * _pow_recursion - Calc returns the value of X to Y
- * @x: Value 
- * @y: Time 
+ * @x: Value to raise 
+ * @y: Time to raise
  *
  * Return: Int
  */
