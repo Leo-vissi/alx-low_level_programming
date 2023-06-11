@@ -42,10 +42,10 @@ int check_Pal(char *s, int x, int y)
 }
 
 /**
- * is_palindrome - Checks if a string is a palindrome
- * @s: The string
+ * is_palindrome - Checks the string for palindrome
+ * @s: String
  *
- * Return: 1 if palindrome, 0 otherwise 
+ * Return: 1 if palindrome, 0 otherwise
  */
 
 int is_palindrome(char *s)
