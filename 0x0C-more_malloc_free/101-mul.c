@@ -101,7 +101,7 @@ int main(int argc, char **argv)
 	for (x = 0; x < strlen(argv[1]) + strlen(argv[2]); x++)
 	{
 		if (result[x])
-			check = 1;
+			slec = 1;
 		if (slec)
 			putchar(result[x] + '0');
 	}
