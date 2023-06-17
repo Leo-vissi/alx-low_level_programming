@@ -94,7 +94,7 @@ int main(int argc, char **argv)
 		return (98);
 	}
 
-	result = multy(argv[1], argv[2]);
+	result = multiply(argv[1], argv[2]);
 	if (result == 0)
 		return (0);
 
