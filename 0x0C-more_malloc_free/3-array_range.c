@@ -3,29 +3,27 @@
 
 /**
  * array_range - Creates an array of integers
- * containing all values from min to max.
  *
  * @min: The minimum value of the range.
- * @max: The maximum value of the range.
  *
  * Return: Pointer to the created array.
- * If malloc fails or min is greater than max, the function returns NULL.
+ * 
  */
 
 int *array_range(int min, int max)
 {
-	int *ar, x = 0, y = min;
+	int *array x = 0, y = min;
 
 	if (min > max)
 		return (NULL);
 
-	ar = malloc((max - min + 1) * sizeof(int));
+	array = malloc((max - min + 1) * sizeof(int));
 
-	if (!ar)
+	if (!array)
 		return (NULL);
 
-	while (x <= max - m+in)
-		ar[x++] = y++;
+	while (x <= max - min)
+		array[x++] = y++;
 
-	return (ar);
+	return (array);
 }
