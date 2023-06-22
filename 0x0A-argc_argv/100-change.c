@@ -8,8 +8,7 @@
  * @argv: array of arguments
  *
  *         note : coins[] Count the minimum number of coin to make
- *                change for a given coin value
- * 
+ *                change for a given coin value 
  * Return: 0 (Success), 1 (Error)
  */
 
