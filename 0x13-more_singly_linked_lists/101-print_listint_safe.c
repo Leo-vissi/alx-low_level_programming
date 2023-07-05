@@ -1,62 +1,69 @@
 #include "lists.h"
 
-size_t count_nodes(const listint_t *head);
-
 /**
- * count_nodes - Counts the number of nodes in a linked list
- * @head: Pointer to the head node of the list
+ * free_listp - frees a linked list
+ * @head: head of a list.
  *
- * Return: Number of nodes in the list
+ * Return: no return.
  */
-
-size_t count_nodes(const listint_t *head)
+void free_listp(listp_t **head)
 {
-	size_t count = 0;
+	listp_t *temp;
+	listp_t *curr;
 
-	while (head != NULL)
+	if (head != NULL)
 	{
-		count++;
-		head = head->next;
+		curr = *head;
+		while ((temp = curr) != NULL)
+		{
+			curr = curr->next;
+			free(temp);
+		}
+		*head = NULL;
 	}
-
-	return (count);
 }
 
 /**
- * print_listint_safe - Prints a linked list, even if it has a loop
- * @head: Pointer to the head node of the list
+ * print_listint_safe - prints a linked list.
+ * @head: head of a list.
  *
- * Return: Number of nodes in the list
+ * Return: number of nodes in the list.
  */
-
 size_t print_listint_safe(const listint_t *head)
 {
-	size_t count = 0;
-	const listint_t *current = head, *loop_node = NULL;
+	size_t nnodes = 0;
+	listp_t *hptr, *new, *add;
 
-	while (current != NULL)
+	hptr = NULL;
+	while (head != NULL)
 	{
-		printf("[%p] %d\n", (void *)current, current->n);
-		count++;
+		new = malloc(sizeof(listp_t));
 
-		if (current >= current->next)
+		if (new == NULL)
+			exit(98);
+
+		new->p = (void *)head;
+		new->next = hptr;
+		hptr = new;
+
+		add = hptr;
+
+		while (add->next != NULL)
 		{
-			loop_node = current->next;
-			while (loop_node >= current)
+			add = add->next;
+			if (head == add->p)
 			{
-				count++;
-				printf("[%p] %d\n", (void *)loop_node, loop_node->n);
-				if (loop_node == current)
-					break;
-				loop_node = loop_node->next;
+				printf("-> [%p] %d\n", (void *)head, head->n);
+				free_listp(&hptr);
+				return (nnodes);
 			}
-			break;
 		}
-		current = current->next;
+
+		printf("[%p] %d\n", (void *)head, head->n);
+		head = head->next;
+		nnodes++;
 	}
 
-	printf("-> [%p] %d\n", (void *)current, current->n);
-	count++;
-
-	return (count);
+	free_listp(&hptr);
+	return (nnodes);
 }
